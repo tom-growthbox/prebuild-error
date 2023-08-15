@@ -1,0 +1,30 @@
+{
+    "name": "Prebuild Error",
+    "build": {
+        "dockerfile": "../.codespaces.Dockerfile"
+    },
+
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest",
+            "enableNonRootDocker": "true",
+            "dockerDashComposeVersion": "v2"
+        }
+    },
+
+    "hostRequirements": {
+        "memory": "8gb"
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot-nightly",
+                "GitHub.copilot-labs",
+                "GitHub.copilot-chat"
+            ]
+        }
+    },
+
+    "onCreateCommand": "bin/codespaces/prebuild.sh"
+}
